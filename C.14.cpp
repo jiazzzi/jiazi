@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main()
+{
+	int money;
+	printf("输入找零多少分：\n");
+	scanf("%d",&money);
+	int a=0,b=0,c=0,d=0;
+	if(money>=25)
+	{
+		a=money/25;
+		money-=a*25;
+	}
+	if(money>=10)
+	{
+		b=money/10;
+		money-=b*10;
+	}
+	if(money>=5)
+	{
+		c=money/5;
+		money-=c*5;
+	}
+	if(money>=1)
+	{
+		d=money/1;
+		money-=d*1;
+	}
+	if(a>0)
+	printf("%d个25分",a);
+	if(b>0)
+	{
+		if(a>0)
+			printf("和"); 
+		printf("%d个10分",b);
+	}
+	if(c>0)
+	{
+		if(a>0||b>0)
+			printf("和"); 
+		printf("%d个5分",c);
+	}
+	if(d>0)
+	{
+		if(a>0||b>0||c>0)
+			printf("和"); 
+		printf("%d个1分",d);
+	}
+	printf("硬币");
+	return 0; 
+}
